@@ -13,17 +13,14 @@ CREATE TABLE nhl.game
     home_team_id smallint,
     away_goals smallint,
     home_goals smallint,
-    outcome text COLLATE pg_catalog."default",
-    home_rink_side_start text COLLATE pg_catalog."default",
-    venue text COLLATE pg_catalog."default",
-    venue_link text COLLATE pg_catalog."default",
-    venue_time_zone_id text COLLATE pg_catalog."default",
+    outcome varchar(255),
+    home_rink_side_start varchar(255),
+    venue varchar(255),
+    venue_link varchar(255),
+    venue_time_zone_id varchar(255),
     venue_time_zone_offset smallint,
-    venue_time_zone_tz text COLLATE pg_catalog."default",
-    CONSTRAINT game_pkey PRIMARY KEY (game_id)
-)
-WITH (
-    OIDS = FALSE
+    venue_time_zone_tz varchar(255),
+    PRIMARY KEY (game_id)
 )
 TABLESPACE pg_default;
 
