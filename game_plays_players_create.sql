@@ -8,7 +8,7 @@ CREATE TABLE nhl.game_plays_players
     FOREIGN KEY (play_id) REFERENCES nhl.game_plays(play_id), 
     FOREIGN KEY (game_id) REFERENCES nhl.game(game_id),
     FOREIGN KEY (player_id) REFERENCES nhl.player_info(player_id),
-    PRIMARY KEY (play_id, game_id, player_id)
+    PRIMARY KEY (play_id, game_id, player_id, playerType)
 )
 TABLESPACE pg_default;
 
