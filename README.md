@@ -29,3 +29,12 @@ Para verificar que la base de datos se encuentre funcionando correctamente:
 ```
 /etc/init.d/postgresql status
 ```
+Para crear conexión a servidor desde pgAdmin, click derecho en [Servers]>[Create], luego especificar lo siguiente.
+- En menu [General], especificar Name: cc3201bbdd
+- En menu [Connection], especificar:
+  - host: cc3201.dcc.uchile.cl
+  - port: 5524
+  - Maintenance database: nhl-db
+  - Username: cc3201
+  - Password: sup3rs3cur3
+Finalmente guardar la conexión y debería realizarse automáticamente.
