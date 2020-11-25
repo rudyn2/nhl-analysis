@@ -37,4 +37,5 @@ Para crear conexión a servidor desde pgAdmin, click derecho en [Servers]>[Creat
   - Maintenance database: nhl-db
   - Username: cc3201
   - Password: sup3rs3cur3
+  
 Finalmente guardar la conexión y debería realizarse automáticamente.
