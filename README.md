@@ -10,9 +10,9 @@ Data analysis project based on "Bases de Datos-CC3201" course
 - puerto ssh: 324
 
 Usando cliente SSH linux, basta con ejecutar el siguiente comando e ingresar la clave.
-'''
+```
 ssh cc3201@cc3201.dcc.uchile.cl -p 324
-'''
+```
 
 ## Base de datos
 
@@ -20,6 +20,6 @@ ssh cc3201@cc3201.dcc.uchile.cl -p 324
 - name: nhl-db
 
 Para ingresar al panel de administración de la base de datos ejecutar el siguiente comando desde el usuario cc3201:
-'''
+```
 psql nhl-db
-'''
+```
