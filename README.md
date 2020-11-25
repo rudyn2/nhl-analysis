@@ -17,6 +17,7 @@ ssh cc3201@cc3201.dcc.uchile.cl -p 324
 ## Base de datos
 
 - owner: cc3201
+- owner-password: sup3rs3cur3
 - name: nhl-db
 
 Para ingresar al panel de administración de la base de datos ejecutar el siguiente comando desde el usuario cc3201:
