@@ -23,3 +23,8 @@ Para ingresar al panel de administración de la base de datos ejecutar el siguie
 ```
 psql nhl-db
 ```
+
+Para verificar que la base de datos se encuentre funcionando correctamente:
+```
+/etc/init.d/postgresql status
+```
