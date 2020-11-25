@@ -46,3 +46,8 @@ Para copiar CSV a una tabla (ejemplo):
 ```
 COPY nhl.game FROM '/home/cc3201/game.csv'  DELIMITER ',' CSV HEADER;
 ```
+## Insights
+
+- En todas las tablas CON datos cargados no existen conflictos de dominio.
+- Analizar que todos los tipos esten bien asignados. Ver la posibilidad de agregar restricciones.
+- Analizar la tabla game_plays. Al parecer la columna play_id es la concatenación de game_id y play_num.
