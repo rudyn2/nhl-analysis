@@ -14,7 +14,7 @@ Usando cliente SSH linux, basta con ejecutar el siguiente comando e ingresar la 
 ssh cc3201@cc3201.dcc.uchile.cl -p 324
 ```
 
-## Base de datos
+## Conexión a base de datos
 
 - owner: cc3201
 - owner-password: sup3rs3cur3
@@ -39,3 +39,10 @@ Para crear conexión a servidor desde pgAdmin, click derecho en [Servers]>[Creat
   - Password: sup3rs3cur3
   
 Finalmente guardar la conexión y debería realizarse automáticamente.
+
+## Comandos SQL útiles
+
+Para copiar CSV a una tabla (ejemplo):
+```
+COPY nhl.game FROM '/home/cc3201/game.csv'  DELIMITER ',' CSV HEADER;
+```
