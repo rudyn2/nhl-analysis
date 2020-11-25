@@ -12,5 +12,5 @@ CREATE TABLE nhl.player_info
 )
 TABLESPACE pg_default;
 
-ALTER TABLE nhl.game
+ALTER TABLE nhl.playe_info
     OWNER to cc3201;

@@ -24,5 +24,5 @@ CREATE TABLE nhl.game_plays
 )
 TABLESPACE pg_default;
 
-ALTER TABLE nhl.game
+ALTER TABLE nhl.game_plays
     OWNER to cc3201;

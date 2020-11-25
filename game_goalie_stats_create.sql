@@ -26,5 +26,5 @@ CREATE TABLE nhl.game_goalie_stats
 )
 TABLESPACE pg_default;
 
-ALTER TABLE nhl.game
+ALTER TABLE nhl.game_goalie_stats
     OWNER to cc3201;
