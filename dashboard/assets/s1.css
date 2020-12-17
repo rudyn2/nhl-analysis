@@ -584,6 +584,9 @@ there.
   #water {
     margin-right: 0px;
   }
+  .hidden-state {
+    display: none;
+  }
   .mini_container {
     margin-bottom: 25px !important;
     border-radius: 5px;
