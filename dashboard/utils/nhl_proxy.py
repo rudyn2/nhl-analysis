@@ -52,6 +52,6 @@ if __name__ == '__main__':
 
     conn = psycopg2.connect(**params)
     cur = conn.cursor()
-    n = NHLProxy(conn.cursor(), 'queries')
+    n = NHLProxy(conn.cursor(), '../queries')
     team_info = n.get_team_info()
     team_stats = n.get_team_stats()
