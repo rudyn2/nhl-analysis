@@ -372,7 +372,10 @@ if __name__ == "__main__":
     mode = args.mode
 
     # init parameters and data
-    params = {'database': 'nhl-db', 'user': 'cc3201', 'password': 'sup3rs3cur3', 'port': 5524,
+    params = {'database': 'nhl-db',
+              'user': 'cc3201',
+              'password': 'sup3rs3cur3',
+              'port': 5524 if mode == 'dev' else 5432,
               'host': 'cc3201.dcc.uchile.cl' if mode == 'dev' else 'localhost'}
     conn = psycopg2.connect(**params)
     n = NHLProxy(conn, 'queries')
