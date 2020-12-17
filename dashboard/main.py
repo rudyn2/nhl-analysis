@@ -1,4 +1,5 @@
 # Import required libraries
+import argparse
 import pathlib
 
 import dash
@@ -24,19 +25,6 @@ app = dash.Dash(
 )
 app.title = 'NHL Stats'
 server = app.server
-params = {
-    'database': 'nhl-db',
-    'user': 'cc3201',
-    'password': 'sup3rs3cur3',
-    'host': 'cc3201.dcc.uchile.cl',
-    'port': 5524
-}
-conn = psycopg2.connect(**params)
-n = NHLProxy(conn, 'queries')
-team_stats = n.get_team_stats()
-skater = n.get_skater_stats()
-goalie = n.get_goalie_stats()
-team_abbreviation_dict = n.get_team_abbreviations()
 
 # Create app layout
 app.layout = html.Div(
@@ -377,4 +365,24 @@ def update_skater_stats(season, type_season, team):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    parser = argparse.ArgumentParser(description='NHL Stats App Web.')
+    parser.add_argument('--mode', type=str, default='dev',
+                        help='mode [dev or production]')
+    args = parser.parse_args()
+    mode = args.mode
+
+    # init parameters and data
+    params = {'database': 'nhl-db', 'user': 'cc3201', 'password': 'sup3rs3cur3', 'port': 5524,
+              'host': 'cc3201.dcc.uchile.cl' if mode == 'dev' else 'localhost'}
+    conn = psycopg2.connect(**params)
+    n = NHLProxy(conn, 'queries')
+    print("Connection ready!")
+
+    team_stats = n.get_team_stats()
+    skater = n.get_skater_stats()
+    goalie = n.get_goalie_stats()
+    team_abbreviation_dict = n.get_team_abbreviations()
+
+    app_host = '0.0.0.0' if mode == 'production' else 'localhost'
+    app_debug = True if mode == 'dev' else False
+    app.run_server(host=app_host, debug=app_debug)
