@@ -388,5 +388,5 @@ if __name__ == "__main__":
 
     app_host = '0.0.0.0' if mode == 'production' else 'localhost'
     app_debug = True if mode == 'dev' else False
-    app_port = 8050 if mode == 'dev' else 80
+    app_port = 8050 if mode == 'dev' else 8050
     app.run_server(host=app_host, port=app_port, debug=app_debug)
