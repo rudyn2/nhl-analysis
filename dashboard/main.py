@@ -15,10 +15,12 @@ import sys
 import os
 from pathlib import Path
 
+sys.path.append(Path(os.getcwd()).parent.parent)
 sys.path.append(Path(os.getcwd()).parent)
+sys.path.append(Path(os.getcwd()))
 
-from dashboard.config import *
-from dashboard.nhl_proxy import NHLProxy
+from .config import *
+from .nhl_proxy import NHLProxy
 
 # get relative data folder
 PATH = pathlib.Path(__file__).parent
