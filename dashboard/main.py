@@ -12,8 +12,10 @@ from dash.dash import no_update
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 import sys
+import os
+from pathlib import Path
 
-sys.path.append('.')
+sys.path.append(Path(os.getcwd()).parent)
 
 from dashboard.config import *
 from dashboard.nhl_proxy import NHLProxy
