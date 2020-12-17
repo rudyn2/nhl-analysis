@@ -11,6 +11,9 @@ import psycopg2
 from dash.dash import no_update
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
+import sys
+
+sys.path.append('.')
 
 from dashboard.config import *
 from dashboard.nhl_proxy import NHLProxy
