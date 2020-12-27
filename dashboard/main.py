@@ -365,18 +365,18 @@ def update_skater_stats(season, type_season, team):
 
 
 if __name__ == "__main__":
+    import json
     parser = argparse.ArgumentParser(description='NHL Stats App Web.')
     parser.add_argument('--mode', type=str, default='dev',
                         help='mode [dev or production]')
+    parser.add_argument('--creds', type=str, default='params_dev.json', help='Path to credential json.')
     args = parser.parse_args()
     mode = args.mode
 
     # init parameters and data
-    params = {'database': 'nhl-db',
-              'user': 'cc3201',
-              'password': 'sup3rs3cur3',
-              'port': 5524 if mode == 'dev' else 5432,
-              'host': 'cc3201.dcc.uchile.cl' if mode == 'dev' else 'localhost'}
+    with open(args.creds, 'r') as f:
+        params = json.load(f)
+
     conn = psycopg2.connect(**params)
     n = NHLProxy(conn, 'queries')
     print("Connection ready!")
@@ -388,5 +388,5 @@ if __name__ == "__main__":
 
     app_host = '0.0.0.0' if mode == 'production' else 'localhost'
     app_debug = True if mode == 'dev' else False
-    app_port = 8050 if mode == 'dev' else 8050
+    app_port = 80
     app.run_server(host=app_host, port=app_port, debug=app_debug)
