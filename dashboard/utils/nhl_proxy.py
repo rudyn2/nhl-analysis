@@ -40,18 +40,3 @@ class NHLProxy:
                    'ppg', 'ppp', 'shg', 'shp', 's', 's_per', 'div_toi_gp']
         return self._execute(os.path.join(self.queries_path, 'skaters.sql'), headers)
 
-
-if __name__ == '__main__':
-    params = {
-        'database': 'nhl-db',
-        'user': 'cc3201',
-        'password': 'sup3rs3cur3',
-        'host': 'cc3201.dcc.uchile.cl',
-        'port': 5524
-    }
-
-    conn = psycopg2.connect(**params)
-    cur = conn.cursor()
-    n = NHLProxy(conn.cursor(), '../queries')
-    team_info = n.get_team_info()
-    team_stats = n.get_team_stats()
